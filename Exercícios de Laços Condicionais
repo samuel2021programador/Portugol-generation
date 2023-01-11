@@ -1,0 +1,195 @@
+EXERCÍCIOS
+1) João, homem de bem, comprou um microcomputador para controlar o rendimento diário de seu trabalho. Toda vez que ele traz um peso de tomate maior que o estabelecido pelo regulamento do estado de São Paulo (50 quilos) deve pagar um multa de R$ 4,00 por quilo excedente. João precisa que você faça um sistema que leia a variável P (peso de tomates) e verifique se há excesso. Se houver, gravar na variável E (Excesso) e na variável M o valor da multa que João deverá pagar. Caso contrário mostrar tais variáveis com o conteúdo ZERO.
+
+programa
+{
+
+    funcao inicio()
+    {
+
+        real pesoT,multa=0.0,exesso
+
+        escreva("Peso do tomate: ")
+        leia(pesoT)
+
+        exesso = pesoT - 50.0
+        multa = exesso * 4.0
+
+        se (pesoT > 50.0){
+            escreva ("Você exedeu o peso limite de 50 quilos, passando "+exesso+" Quilos e pagara uma multa de: "+multa+" Reais.")
+        }
+        senao se (exesso <= 0 e multa <= 0) {
+            exesso = 0.0
+            multa = 0.0
+            escreva ("Você não exedeu o peso limite de 50 quilos, tendo "+exesso+" Quilos de exesso e tendo: "+multa+" Reais de multa")
+        }
+    }
+}
+
+______________________________________________________
+2) Elabore um sistema que leia as variáveis C e N, respectivamente código e número de horas trabalhadas de um operário. E calcule o salário sabendo-se que ele ganha R$ 10,00 por hora. Quando o número de horas exceder a 50 calcule o excesso de pagamento armazenando-o na variável E, caso contrário zerar tal variável. A hora excedente de trabalho vale R$ 20,00. No final do processamento imprimir o salário total e o salário excedente.
+
+programa
+{
+	
+	funcao inicio()
+	{		
+		   real salario, horaTrabalhada, horaExtra
+
+		   escreva("Insira as horas trabalhadas: ")
+		   leia(horaTrabalhada)
+
+		   se( horaTrabalhada > 50.0){
+		   	horaExtra = (horaTrabalhada - 50.0) * 20.0
+		   	salario = (horaTrabalhada * 10.0) + horaExtra
+		   	escreva("\n Você têm hora extra a receber: R$", horaExtra, "\n Seu salário é de R$", salario)
+		   } senao{
+		   		salario = horaTrabalhada * 10.0
+		   		escreva("\n Seu salário é de R$", salario)
+		   }
+	}
+}
+
+_____________________________________________
+3) Desenvolva um sistema em que:
+Leia 4 (quatro) números;
+Calcule o quadrado de cada um;
+Se o valor resultante do quadrado do terceiro for >= 1000, imprima-o e finalize;
+Caso contrário, imprima os valores lidos e seus respectivos quadrados.
+
+programa{
+
+	funcao inicio(){
+
+		inteiro n1,n2,n3,n4,q1,q2,q3,q4
+
+		escreva("Digite o primeiro numero: ")
+		leia(n1)
+
+		escreva("Digite o segundo numero: ")
+		leia(n2)
+
+		escreva("Digite o terceiro numero: ")
+		leia(n3)
+
+		escreva("Digite o quarto numero: ")
+		leia(n4)
+
+		q1 = n1 * n1
+		q2 = n2 * n2
+		q3 = n3 * n3
+		q4 = n4 * n4
+
+		se (q3 >= 1000) {
+			escreva(q3)
+			}senao{
+				escreva("1 numero: ",n1," e ao quadrado: ",q1,"\n","2 numero: ",n2," e ao quadrado: ",q2,"\n","3 numero: ",n3," e ao quadrado: ",q3,"\n","4 numero: ",n4," e ao quadrado: ",q4,"\n")
+				
+				}}}
+_________________________
+4) Faça um sistema que leia um número inteiro e mostre uma mensagem indicando se este número é par ou ímpar, e se é positivo ou negativo.
+
+programa{
+
+	funcao inicio(){
+
+		inteiro n1
+
+		escreva("Escreva um número: ")
+		leia(n1)
+
+		se(n1%2 == 0){
+			escreva("É par!")
+			} senao {escreva("É impar.")}
+
+	se(n1 > 0){
+			escreva("É positivo!")
+			} senao {escreva("É negativo.")}
+	}
+}
+_______________________________________________________
+5) A Secretaria de Meio Ambiente que controla o índice de poluição mantém 3 grupos de indústrias que são altamente poluentes do meio ambiente. O índice de poluição aceitável varia de 0,05 até 0,25. Se o índice sobe para 0,3 as indústrias do 1º grupo são intimadas a suspenderem suas atividades, se o índice crescer para 0,4 as industrias do 1º e 2º grupo são intimadas a suspenderem suas atividades, se o índice atingir 0,5 todos os grupos devem ser notificados a paralisarem suas atividades. Faça um sistema que leia o índice de poluição medido e emita a notificação adequada aos diferentes grupos de empresas.
+
+programa{
+
+	funcao inicio(){
+
+		 real indice
+
+		escreva("Indice G1: ")
+		leia(indice)
+
+		se (indice == 0.3) {escreva("Grupo 1: Atividades Suspensas.")}
+
+		senao se (indice == 0.4){escreva("Grupo 1 e 2: Atividades Suspensas.")}
+
+		senao se (indice == 0.5){escreva("Todos os grupos: Atividades Suspensas.")}
+
+	}
+}
+______________________________________________________________
+6) Elabore um sistema que dada a idade de um nadador classifique-o em uma das seguintes categorias:
+Infantil A = 5 a 7 anos
+Infantil B = 8 a 11 anos
+Juvenil A = 12 a 13 anos
+Juvenil B = 14 a 17 anos
+Adultos = Maiores de 18 anos
+
+
+programa{
+
+	funcao inicio(){
+		inteiro idade
+
+		escreva("Digite a idade do nadador: ")
+		leia(idade)
+
+		se(idade < 5) {
+			escreva("Nadadores com ", idade," anos não possuem categoria.")
+			}senao se(idade >=5 e idade <= 7) {escreva("A categoria do nadador com ", idade," anos é: INFANTIL A.")
+			}senao se(idade <= 11) {escreva("A categoria do nadador com ", idade," anos é: INFANTIL B.")
+			}senao se(idade == 12 ou idade == 13) {escreva("A categoria do nadador com ", idade," anos é: JUVENIL A.")
+			}senao se(idade <= 17) {escreva("A categoria do nadador com ", idade," anos é: JUVENIL B")
+			}senao{escreva("A categoria do nadador com ", idade," anos é: Adulto")
+			}
+	} 
+}____________________________________________________________
+7) Receber valores de base e altura de um triângulo e verificar se são valores válidos (positivos maiores que zero). Em caso afirmativo, calcular a área do triângulo.
+programa{
+
+	funcao inicio(){
+
+		/*7) Receber valores de base e altura de um triângulo e verificar se são valores válidos 
+		(positivos maiores que zero). Em caso afirmativo, calcular a área do triângulo.*/
+
+		inteiro base,altura,area
+
+		escreva("Escreva a base de um triangulo: ")
+		leia(base)
+		
+		escreva("Escreva a altura de um triangulo: ")
+		leia(altura)
+
+		se (base >0 e altura > 0) {
+			area = base * altura / 2
+			escreva ("A area do triangulo é de: ",area)
+			}
+	}
+}
+______________________________________________________
+8) Construa um sistema para ler uma variável numérica N e imprimi-la somente se a mesma for maior que 100, caso contrário imprimi-la com o valor zero.
+
+
+programa{
+
+	funcao inicio(){
+
+	inteiro n
+
+	escreva("Digite um número menor que 100: ")
+	leia (n)
+
+	se (n < 100) {
+		escreva(" O numero digitado: ", n, " é menor que 100!")
+		} senao { escreva("O numero digitado: ",n, " é inválido")}
+	}}
